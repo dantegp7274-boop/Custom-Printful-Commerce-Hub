@@ -1,0 +1,1197 @@
+<!DOCTYPE html><html lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Lienzo Urbano Atelier · Official Store, Blog &amp; Custom Made</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf9;
+    --card: #ffffff;
+    --text: #1c1917;
+    --muted: #78716c;
+    --border: #e7e5e4;
+    --accent: #f59e0b;
+    --primary: #1c1917;
+    --whatsapp-green: #25d366;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; padding-bottom: 70px; }
+  
+  /* HEADER */
+  header { background: var(--primary); color: #fff; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #292524; }
+  .brand { font-size: 18px; font-weight: 800; display: flex; align-items: center; gap: 12px; }
+  .nav-links { display: flex; align-items: center; gap: 6px; }
+  .nav-btn { background: transparent; border: none; color: #a8a29e; font-size: 14px; font-weight: 600; padding: 7px 16px; border-radius: 8px; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+  .nav-btn:hover { color: #fff; background: #292524; }
+  .nav-btn.active { color: #fff; background: #292524; border: 1px solid #44403c; }
+  
+  .header-whatsapp-link { display: inline-flex; align-items: center; gap: 6px; background: #25d366; color: #000; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 20px; text-decoration: none; }
+  .lang-switcher { display: inline-flex; align-items: center; background: #292524; border: 1px solid #44403c; border-radius: 20px; padding: 2px; }
+  .lang-btn { background: transparent; border: none; color: #a8a29e; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 14px; cursor: pointer; font-family: inherit; }
+  .lang-btn.active { background: #f59e0b; color: #000; }
+  .cart-badge { background: var(--accent); color: #000; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 13px; cursor: pointer; border: none; font-family: inherit; }
+  
+  .container { max-width: 1280px; margin: 0 auto; padding: 32px 16px; }
+  .hero { background: #1c1917; color: white; padding: 44px 36px; border-radius: 16px; margin-bottom: 32px; border: 1px solid #292524; }
+  .hero-badge { display: inline-block; background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 14px; }
+  .hero h1 { font-size: 30px; font-weight: 800; margin-bottom: 10px; }
+  .hero p { color: #d6d3d1; font-size: 14px; max-width: 660px; margin-bottom: 20px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .pill { display: inline-flex; align-items: center; gap: 5px; background: #292524; border: 1px solid #3f3f46; color: #e4e4e7; font-size: 11px; padding: 5px 10px; border-radius: 6px; font-weight: 600; }
+
+  /* SLIDER WIDGET */
+  .slider-section { background: #181615; border: 1px solid #2e2a27; border-radius: 18px; padding: 24px; margin-bottom: 36px; color: #fff; }
+  .slider-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .slider-arrow-btn { background: #262320; border: 1px solid #443e39; color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s; }
+  .slider-arrow-btn:hover { background: #f59e0b; color: #000; }
+  .slider-viewport { overflow: hidden; border-radius: 12px; }
+  .slider-track { display: flex; transition: transform 0.4s ease; gap: 18px; }
+  .slide-item { min-width: calc(33.333% - 12px); flex-shrink: 0; background: #221f1d; border: 1px solid #332e2a; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+  @media(max-width: 900px){ .slide-item { min-width: calc(50% - 9px); } }
+  @media(max-width: 600px){ .slide-item { min-width: 100%; } }
+  .slide-img-wrapper { position: relative; width: 100%; height: 190px; background: #141312; }
+  .slide-img { width: 100%; height: 100%; object-fit: cover; }
+  .slide-badge-pill { position: absolute; top: 10px; left: 10px; font-size: 9px; font-weight: 800; padding: 3px 8px; border-radius: 5px; text-transform: uppercase; }
+  .slide-content { padding: 16px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; }
+  .slider-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+  .slider-dot { width: 8px; height: 8px; border-radius: 50%; background: #443e39; cursor: pointer; transition: 0.2s; }
+  .slider-dot.active { width: 22px; border-radius: 5px; background: #f59e0b; }
+
+  /* WOOCOMMERCE 4x3 GRID */
+  .grid-woocommerce-4x3 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media(max-width: 1100px){ .grid-woocommerce-4x3 { grid-template-columns: repeat(3, 1fr); } }
+  @media(max-width: 780px){ .grid-woocommerce-4x3 { grid-template-columns: repeat(2, 1fr); } }
+  @media(max-width: 500px){ .grid-woocommerce-4x3 { grid-template-columns: 1fr; } }
+  .product-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+  .product-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+  .product-img { width: 100%; height: 200px; object-fit: cover; background: #f5f5f4; }
+  .product-body { padding: 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; }
+  .product-cat { font-size: 11px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .fulfillment-tag { font-size: 10px; color: #0d9488; font-weight: 700; background: #ccfbf1; padding: 2px 6px; border-radius: 4px; }
+  .product-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; line-height: 1.35; }
+  .product-desc { font-size: 12px; color: var(--muted); margin-bottom: 14px; line-height: 1.45; }
+  .product-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 12px; }
+  .product-price { font-size: 16px; font-weight: 800; font-family: monospace; }
+  
+  .filter-bar { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 20px; }
+  .filter-chip { background: #fff; border: 1px solid var(--border); color: #57534e; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap; font-family: inherit; }
+  .filter-chip.active { background: #1c1917; color: #fff; border-color: #1c1917; }
+  
+  .btn { padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 12px; border: none; cursor: pointer; transition: 0.2s; font-family: inherit; display: inline-flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
+  .btn-accent { background: var(--accent); color: #000; }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-outline { background: transparent; border: 1px solid #44403c; color: #fff; }
+  .btn-whatsapp { background: #25d366; color: #000; font-weight: 700; }
+  
+  /* 12-BOX CUSTOM MADE MATRIX */
+  .matrix-section { margin-top: 44px; background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 28px; }
+  .matrix-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 22px; flex-wrap: wrap; gap: 10px; }
+  .matrix-row-title { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #78716c; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; border-left: 3px solid var(--accent); padding-left: 8px; }
+  .matrix-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+  @media(max-width: 860px){ .matrix-grid-3 { grid-template-columns: 1fr; } }
+  .matrix-box { background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; }
+  .matrix-box img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; }
+  .matrix-box-tag { display: inline-flex; align-items: center; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px; margin-bottom: 8px; text-transform: uppercase; }
+  .matrix-spec { font-size: 11px; font-family: monospace; color: #64748b; background: #f1f5f9; padding: 4px 8px; border-radius: 4px; margin-top: 8px; display: inline-block; }
+
+  /* BLOG ARTICLES SECTION */
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+  @media(max-width: 960px){ .blog-grid { grid-template-columns: 1fr; } }
+  .blog-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+  .blog-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.06); }
+  .blog-card-img { width: 100%; height: 210px; object-fit: cover; }
+  .blog-card-body { padding: 22px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; }
+  .blog-tag-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 11px; font-weight: 700; }
+  .blog-pill { background: #fef3c7; color: #92400e; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; font-size: 10px; }
+  .article-title { font-size: 17px; font-weight: 800; line-height: 1.35; margin-bottom: 10px; color: #1c1917; }
+  .article-excerpt { font-size: 13px; color: #57534e; line-height: 1.6; margin-bottom: 16px; }
+  .article-keypoints { background: #f5f5f4; border-left: 3px solid #f59e0b; padding: 10px 12px; border-radius: 0 6px 6px 0; margin-bottom: 16px; font-size: 12px; color: #44403c; line-height: 1.5; }
+  
+  /* CONTACT PAGE */
+  .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; }
+  @media(max-width: 800px){ .contact-grid { grid-template-columns: 1fr; } }
+  .form-group { margin-bottom: 14px; }
+  .form-label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 5px; color: #44403c; }
+  .form-input, .form-textarea, .form-select { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; font-family: inherit; }
+
+  /* FLOATING WHATSAPP */
+  .floating-wa { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .floating-wa-btn { width: 56px; height: 56px; background: #25d366; border-radius: 50%; box-shadow: 0 8px 24px rgba(37,211,102,0.45); display: flex; align-items: center; justify-content: center; color: #fff; }
+  .floating-wa-label { background: #1c1917; color: #fff; font-size: 12px; font-weight: 700; padding: 7px 12px; border-radius: 20px; border: 1px solid #3f3f46; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+  @media(max-width: 600px){ .floating-wa-label { display: none; } }
+</style>
+<style>
+  :root {
+    --bg: #0f1c34;
+    --bg-surface: #152648;
+    --card: #182e56;
+    --card-border: rgba(56, 189, 248, 0.28);
+  }
+  body {
+    background: radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.16) 0%, transparent 45%), radial-gradient(circle at 82% 65%, rgba(99, 102, 241, 0.15) 0%, transparent 50%), linear-gradient(180deg, #0e1930 0%, #132345 100%) !important;
+    color: #e2e8f0 !important;
+    min-height: 100vh;
+    position: relative;
+  }
+  header {
+    background: rgba(14, 25, 48, 0.92) !important;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.28) !important;
+    backdrop-filter: blur(12px);
+  }
+  .product-card, .matrix-box, .blog-card {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+  }
+  .product-card:hover, .matrix-box:hover, .blog-card:hover {
+    transform: translateY(-5px) !important;
+    border-color: rgba(56, 189, 248, 0.55) !important;
+    box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.35), 0 0 15px rgba(56, 189, 248, 0.15) !important;
+  }
+  .floating-art-canvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .floating-sym {
+    position: absolute;
+    font-family: 'Material Symbols Outlined';
+    opacity: 0.2;
+    color: #38bdf8;
+    user-select: none;
+    will-change: transform;
+  }
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-24px) translateX(12px); }
+  }
+  @keyframes floatRotate {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(180deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
+  }
+  .anim-float-1 { animation: floatSlow 8s ease-in-out infinite; }
+  .anim-float-2 { animation: floatRotate 16s linear infinite; }
+  .anim-float-3 { animation: floatSlow 11s ease-in-out infinite 2s; }
+  .anim-float-4 { animation: floatRotate 20s linear infinite 3s; }
+</style><style>
+  :root {
+    --card: #eef4fb !important;
+    --border: #ccd8ea !important;
+  }
+  .product-card {
+    background: #f1f6fc !important;
+    border-color: #cbd8ec !important;
+  }
+  .product-img {
+    background: #e2ecf7 !important;
+  }
+  .matrix-section {
+    background: #eaf1fa !important;
+    border-color: #cbd8ec !important;
+  }
+  .matrix-box {
+    background: #f4f8fd !important;
+    border-color: #d2e0f0 !important;
+  }
+  .matrix-spec {
+    background: #e2ecf8 !important;
+    color: #475569 !important;
+  }
+  .filter-chip {
+    background: #eef4fb !important;
+    border-color: #cbd8ec !important;
+    color: #334155 !important;
+  }
+  .filter-chip.active {
+    background: #1c1917 !important;
+    color: #ffffff !important;
+    border-color: #1c1917 !important;
+  }
+  .blog-card {
+    background: #f1f6fc !important;
+    border-color: #cbd8ec !important;
+  }
+  .article-keypoints {
+    background: #e5eff9 !important;
+  }
+</style></head>
+<body><div class="floating-art-canvas" aria-hidden="true"><span class="floating-sym anim-float-1" style="top: 15%; left: 4%; font-size: 38px;">checkroom</span><span class="floating-sym anim-float-2" style="top: 28%; right: 5%; font-size: 32px;">print</span><span class="floating-sym anim-float-3" style="top: 60%; left: 2%; font-size: 44px;">palette</span><span class="floating-sym anim-float-4" style="top: 75%; right: 6%; font-size: 36px;">local_shipping</span><span class="floating-sym anim-float-1" style="top: 88%; left: 8%; font-size: 30px;">stylus_note</span></div><div class="floating-art-canvas"><span class="floating-sym sym-1">palette</span><span class="floating-sym sym-2">print</span><span class="floating-sym sym-3">checkroom</span><span class="floating-sym sym-4">brush</span><span class="floating-sym sym-5">layers</span></div>
+<!-- HEADER -->
+<header>
+<div class="brand">
+<span class="">LIENZO URBANO</span>
+<span style="font-size: 11px; font-family: monospace; color: #f59e0b; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); padding: 2px 7px; border-radius: 5px; font-weight: 600;" class="">
+      🔒 lienzourbano.shop
+    </span>
+<span style="font-size: 11px; color: #10b981; display: inline-flex; align-items: center; gap: 4px;" class="">● WordPress + Printful Live</span>
+</div>
+<nav class="nav-links">
+<button class="nav-btn active" id="nav-tienda" onclick="switchTab('tienda')">Tienda</button>
+<button class="nav-btn" id="nav-blog" onclick="switchTab('blog')">Blog</button>
+<button class="nav-btn" id="nav-contacto" onclick="switchTab('contacto')">Contacto</button>
+<a class="header-whatsapp-link" href="https://wa.me/525525433766?text=Hola%20Lienzo%20Urbano%2C%20quiero%20cotizar%20un%20drop%20personalizado" target="_blank" title="WhatsApp: +52 55 2543 3766">
+<span class="material-symbols-outlined" style="font-size: 15px;">chat</span>
+<span class="">WhatsApp +52 55 2543 3766</span>
+</a>
+<div class="lang-switcher">
+<button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+<button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+</nav>
+<button class="cart-badge" onclick="alert('Tu bolsa contiene ' + cartItems + ' producto(s). Total: $' + cartTotal.toFixed(2))">
+    Bolsa (<span id="cart-counter" class="">0</span>)
+  </button>
+</header>
+<div class="container">
+<!-- ==================== TAB 1: TIENDA ==================== -->
+<section class="tab-pane" id="tab-tienda">
+<div class="hero">
+<span class="hero-badge">WordPress + WooCommerce + Printful Connected</span>
+<h1 data-en="Autonomous Print-on-Demand &amp; Lienzo Urbano Store" data-es="Autonomous Print-on-Demand &amp; Lienzo Urbano Store" class="">Autonomous Print-on-Demand &amp; Lienzo Urbano Store</h1>
+<p data-en="Your platform features a state-of-the-art automated bridge: every order placed in WooCommerce is instantly routed to Printful for on-demand printing and synchronizes live shipment tracking back to WordPress." data-es="Tu plataforma cuenta con un puente automatizado de última generación: cada pedido realizado en WooCommerce se enruta al instante a Printful para impresión bajo demanda y sincroniza el rastreo de envíos en tiempo real de vuelta a WordPress." class="">Tu plataforma cuenta con un puente automatizado de última generación: cada pedido realizado en WooCommerce se enruta al instante a Printful para impresión bajo demanda y sincroniza el rastreo de envíos en tiempo real de vuelta a WordPress.</p>
+<div class="pills">
+<span class="pill" style="border-color: #f59e0b; color: #f59e0b;">🌐 lienzourbano.shop (Verified SSL)</span>
+<span class="pill">⚡ WordPress 6.x REST API</span>
+<span class="pill">📦 WooCommerce Sync (v3)</span>
+<span class="pill">🖨️ Printful Direct Webhook API</span>
+<a class="pill" href="https://wa.me/525525433766" style="color: #25d366; text-decoration: none;" target="_blank">💬 WhatsApp: +52 55 2543 3766</a>
+</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+<button class="btn btn-accent" onclick="document.getElementById('woo-section').scrollIntoView({behavior: 'smooth'})">Explorar Catálogo 4x3</button>
+<button class="btn btn-outline" onclick="document.getElementById('custom-matrix').scrollIntoView({behavior: 'smooth'})">Ver Matriz Custom Made (12 Cajas)</button>
+<a class="btn btn-whatsapp" href="https://wa.me/525525433766" target="_blank">WhatsApp Directo</a>
+</div>
+</div>
+<!-- ==================== WIDGET 1: SLIDER INTERACTIVO DE DROPS DESTACADOS ==================== -->
+<div class="slider-section">
+<div class="slider-header">
+<div>
+<span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #f59e0b; background: rgba(245,158,11,0.15); padding: 3px 8px; border-radius: 4px;" class="">Atelier Spotlight · Slider Widget</span>
+<h2 style="font-size: 20px; font-weight: 800; margin-top: 4px;" class="">Escaparate Interactivo de Drops Destacados</h2>
+</div>
+<div style="display: flex; gap: 6px;">
+<button class="slider-arrow-btn" onclick="slidePrev()"><span class="material-symbols-outlined" style="font-size: 18px;">chevron_left</span></button>
+<button class="slider-arrow-btn" onclick="slideNext()"><span class="material-symbols-outlined" style="font-size: 18px;">chevron_right</span></button>
+</div>
+</div>
+<div class="slider-viewport">
+<div class="slider-track" id="slider-track">
+<!-- Slide 1 -->
+<div class="slide-item">
+<div class="slide-img-wrapper">
+<span class="slide-badge-pill" style="background: #ef4444; color: #fff;">Edición Limitada</span>
+<img alt="Atelier Heavyweight Hoodie" class="slide-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA39qYr9tFA2C0ie51gzDkqJUsLyz3RvrycPlIDB6vcCNpsgTP0UyH8qdI-U4d4mrAoOWhqQfc5B1-P_sREKBz7ko9AJfWgLJE7guoI761DTYicAJQE7IqUC5ZDYui4TAVZgJz8FOn3CVVe8BoDE-Rqr-rOQcLFXhfA65X-X9LBJAMs3SaTw_aq-GwvXNBEJ7FmsYqVFPYmi2VOJ6bsiv7NDn8UtkYE91WVTZo-B9T8BGWSw7wRXOeCOA">
+</div>
+<div class="slide-content">
+<div>
+<div style="font-size: 11px; color: #a8a29e; display: flex; justify-content: space-between; margin-bottom: 4px;">
+<span class="">SKU: PRN-HOD-028</span>
+<span style="color: #4ade80;" class="">● Printful DTG + Puff</span>
+</div>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 6px;" class="">Atelier French Terry Hoodie 420 GSM</h3>
+<p style="font-size: 12px; color: #a8a29e;" class="">Capucha doble capa sin cordones y felpa pesada para drops urbanos.</p>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #332e2a; padding-top: 10px; margin-top: 10px;">
+<span style="font-size: 16px; font-weight: 800; color: #f59e0b; font-family: monospace;" class="">$88.00</span>
+<button class="btn btn-accent" onclick="addCart('Atelier French Terry Hoodie', 88)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="slide-item">
+<div class="slide-img-wrapper">
+<span class="slide-badge-pill" style="background: #f59e0b; color: #000;">Novedad 2025</span>
+<img alt="Gallery Stretched Canvas" class="slide-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXta2oMyNld7FWOtb2Bc_yLRDHcIlJgo1TJbCRUKh24xINC0Xwv3BTwa6KOBv9ny8vxNdrE-XYCgtb8pZiN_kog0HAGfYGEZIa7on30E1GQi1b-gVBEWe2PzNnnSsSa8tpgbS2fMBjIhOwxo6MygyV-h3QVUMPAfxUh5l-3pjP_t3KVEsqXWai_8uCjIObk1lDFErNL7jv0a-0lUBlcOTrWQuLdeCyVJJUQ1T6MZK7cPiA7TRUrBsqNA">
+</div>
+<div class="slide-content">
+<div>
+<div style="font-size: 11px; color: #a8a29e; display: flex; justify-content: space-between; margin-bottom: 4px;">
+<span class="">SKU: PRN-CAN-120</span>
+<span style="color: #c084fc;" class="">● Fine Art Giclée</span>
+</div>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 6px;" class="">Gallery Fine-Art Stretched Canvas</h3>
+<p style="font-size: 12px; color: #a8a29e;" class="">Lienzo de algodón 380 GSM sobre bastidor macizo de pino FSC.</p>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #332e2a; padding-top: 10px; margin-top: 10px;">
+<span style="font-size: 16px; font-weight: 800; color: #f59e0b; font-family: monospace;" class="">$110.00</span>
+<button class="btn btn-accent" onclick="addCart('Gallery Stretched Canvas', 110)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- Slide 3 -->
+<div class="slide-item">
+<div class="slide-img-wrapper">
+<span class="slide-badge-pill" style="background: #10b981; color: #fff;">Top Streetwear</span>
+<img alt="Heavyweight Organic Boxy Tee" class="slide-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9QJf9kIuLPharQrflmCYrYs2Cu240rljVX8oeefRlMir8_HcLPSwitAZMEVZOS75P-eQawz9U9BnN0ZiXpG6bMRwmlyPjDsLpIPF6kCwApV42KRIiTV4uK7sEKyBQOSkkMuLQp8GUUtnvr2NgWIHAVvQW4WDQT--qTmVEHxYhnKgu4XIax47H8kf9k2e1frTrlSJMEdkqQzpht_rkkTTx_OlXxc7Fhmey-RZKsl0l7u7GJVcm2Mm2uw">
+</div>
+<div class="slide-content">
+<div>
+<div style="font-size: 11px; color: #a8a29e; display: flex; justify-content: space-between; margin-bottom: 4px;">
+<span class="">SKU: PRN-TEE-014</span>
+<span style="color: #38bdf8;" class="">● 240 GSM Organic Boxy</span>
+</div>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 6px;" class="">Heavyweight Organic Boxy Tee</h3>
+<p style="font-size: 12px; color: #a8a29e;" class="">Corte oversize hombro caído con estampado digital Kornit HD.</p>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #332e2a; padding-top: 10px; margin-top: 10px;">
+<span style="font-size: 16px; font-weight: 800; color: #f59e0b; font-family: monospace;" class="">$42.00</span>
+<button class="btn btn-accent" onclick="addCart('Heavyweight Organic Boxy Tee', 42)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- Slide 4 -->
+<div class="slide-item">
+<div class="slide-img-wrapper">
+<span class="slide-badge-pill" style="background: #8b5cf6; color: #fff;">Edición Galería</span>
+<img alt="Optical Acrylic Street Art" class="slide-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK_ZubFntzytciRBEsbTfmZcLXI8BGsDv91gl1lWuqRGoZN3OGAkmURVOtM2eITRtzTOtqPmetdOgX0-LbForrkzAdRSK21KDRBibMXMFPX0aW3gZoeKE4DMfobmRnLX21Rdt3MPbmlWvUJyDS2noZsvi3GicgKoo-AQKtI2FrZ7rDS2j2OY7l9kpc1K7OOAWkFQqcUn-p6PfIy8CyRupjX8I5TNoSPnDPPsnHEpDn_n56Dc7IubbOnw">
+</div>
+<div class="slide-content">
+<div>
+<div style="font-size: 11px; color: #a8a29e; display: flex; justify-content: space-between; margin-bottom: 4px;">
+<span class="">SKU: ART-ACR-750</span>
+<span style="color: #f472b6;" class="">● UV 5mm Metacrilato</span>
+</div>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 6px;" class="">Optical Acrylic Street Panel 5mm</h3>
+<p style="font-size: 12px; color: #a8a29e;" class="">Curado directo UV con pernos de soporte en aluminio pulido.</p>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #332e2a; padding-top: 10px; margin-top: 10px;">
+<span style="font-size: 16px; font-weight: 800; color: #f59e0b; font-family: monospace;" class="">$145.00</span>
+<button class="btn btn-accent" onclick="addCart('Optical Acrylic Street Panel 5mm', 145)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slider-dots">
+<span class="slider-dot active" onclick="goSlide(0)"></span>
+<span class="slider-dot" onclick="goSlide(1)"></span>
+<span class="slider-dot" onclick="goSlide(2)"></span>
+<span class="slider-dot" onclick="goSlide(3)"></span>
+</div>
+</div>
+<!-- ==================== WOOCOMMERCE 4x3 GRID (12 PRODUCTOS COMPLETOS) ==================== -->
+<div id="woo-section" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 16px;">
+<div>
+<h2 style="font-size: 22px; font-weight: 800;" class="">Catálogo Curado Lienzo Urbano (Cuadrícula WooCommerce 4x3)</h2>
+<p style="font-size: 13px; color: var(--muted);" class="">12 productos verificados en Moda Urbana, Accesorios, Cerámica, Arte y Tecnología</p>
+</div>
+<div style="font-size: 12px; color: var(--muted); font-weight: 700;" class="">12 Productos Disponibles</div>
+</div>
+<div class="filter-bar">
+<button class="filter-chip active" onclick="filterCat('todos', this)">Todos</button>
+<button class="filter-chip" onclick="filterCat('moda', this)">Moda Urbana &amp; Ropa (POD)</button>
+<button class="filter-chip" onclick="filterCat('cuero', this)">Accesorios &amp; Cuero</button>
+<button class="filter-chip" onclick="filterCat('ceramica', this)">Cerámica &amp; Hogar</button>
+<button class="filter-chip" onclick="filterCat('arte', this)">Arte &amp; Prints</button>
+<button class="filter-chip" onclick="filterCat('audio', this)">Tecnología &amp; Audio</button>
+</div>
+<div class="grid-woocommerce-4x3" id="woo-grid">
+<!-- 1 -->
+<div class="product-card" data-cat="moda">
+<img alt="Heavyweight Organic Boxy Tee" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9QJf9kIuLPharQrflmCYrYs2Cu240rljVX8oeefRlMir8_HcLPSwitAZMEVZOS75P-eQawz9U9BnN0ZiXpG6bMRwmlyPjDsLpIPF6kCwApV42KRIiTV4uK7sEKyBQOSkkMuLQp8GUUtnvr2NgWIHAVvQW4WDQT--qTmVEHxYhnKgu4XIax47H8kf9k2e1frTrlSJMEdkqQzpht_rkkTTx_OlXxc7Fhmey-RZKsl0l7u7GJVcm2Mm2uw">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Apparel · PRN-TEE-014</span><span class="fulfillment-tag">Printful Fulfilled</span></div>
+<div class="product-title">Heavyweight Organic Boxy Tee</div>
+<div class="product-desc">Algodón peinado orgánico de 240 GSM con corte boxy fit e impresión DTG Kornit.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$42.00</span>
+<button class="btn btn-primary" onclick="addCart('Heavyweight Organic Boxy Tee', 42)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 2 -->
+<div class="product-card" data-cat="moda">
+<img alt="Atelier Heavyweight Hoodie 420 GSM" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA39qYr9tFA2C0ie51gzDkqJUsLyz3RvrycPlIDB6vcCNpsgTP0UyH8qdI-U4d4mrAoOWhqQfc5B1-P_sREKBz7ko9AJfWgLJE7guoI761DTYicAJQE7IqUC5ZDYui4TAVZgJz8FOn3CVVe8BoDE-Rqr-rOQcLFXhfA65X-X9LBJAMs3SaTw_aq-GwvXNBEJ7FmsYqVFPYmi2VOJ6bsiv7NDn8UtkYE91WVTZo-B9T8BGWSw7wRXOeCOA">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Apparel · PRN-HOD-028</span><span class="fulfillment-tag">Printful Fulfilled</span></div>
+<div class="product-title">Atelier Heavyweight Hoodie 420 GSM</div>
+<div class="product-desc">Sudadera de alto gramaje 420 GSM sin cordones con capucha doble y corte streetwear.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$88.00</span>
+<button class="btn btn-primary" onclick="addCart('Atelier Heavyweight Hoodie 420 GSM', 88)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 3 -->
+<div class="product-card" data-cat="moda">
+<img alt="Minimalist Studio Crewneck 360 GSM" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdWBpq3eFO2P82mLBSVWmh7LRGJl299ZGCYi5FDp-WdaWsUnVCAXObWsPu52RraYDp5ye7OpbY9R8tkQtq1Zy-TlqNS4PLNWeNa0Q1wv4XpthjaTQqDWhvoLoI5d3CWhVKxAg0y2gLBPiJQJO7c_5n_YRQDXOntCikNqkkmCyzw9CorUef4ZvQuEqm2biN_MBEK_GucpOHo-KAP9bhWl0VjF4DD1QbHiT5RBx_zPANO821Aovyz9xs_g">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Apparel · PRN-CRW-033</span><span class="fulfillment-tag">Printful Fulfilled</span></div>
+<div class="product-title">Minimalist Studio Crewneck 360 GSM</div>
+<div class="product-desc">Suéter cuello redondo en felpa perchada premium con caída estructurada.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$74.00</span>
+<button class="btn btn-primary" onclick="addCart('Minimalist Studio Crewneck 360 GSM', 74)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 4 -->
+<div class="product-card" data-cat="audio">
+<img alt="Aura Pro Studio Wireless ANC Headphones" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtd1xTFF9rkPHsYc_lwKIlksiclE4O6pcoKORb_mn5PFXzd8br1S-yaepKbUfGL4kMfMleor4F3GEZCoTbOlYfoEzpr3-fEJ3tTlJfjrB9-XtT00S_YnbFVPHZ2zw-WITmBRIrTpL_neLzFllAw3Ngu0BiPAfODcAB14fqLBgoqNfcuFudZ6cbdqSiQ6DLAvA3o1P4nL-E_xafXAHbrlPFp4nsCi1Yu0xzJzVsLG2s9duLwUi320QgKg">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Audio · AUR-ANC-091</span><span class="fulfillment-tag" style="background:#e0f2fe; color:#0369a1;">Lienzo Urbano Stock</span></div>
+<div class="product-title">Aura Pro Studio Wireless ANC Headphones</div>
+<div class="product-desc">Controladores de neodimio de 45mm con cancelación adaptativa y 40h de batería.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$289.00</span>
+<button class="btn btn-primary" onclick="addCart('Aura Pro Studio Wireless ANC Headphones', 289)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 5 -->
+<div class="product-card" data-cat="cuero">
+<img alt="Tuscan Cognac Leather Messenger" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8oO3BRPYbACM_pZr3Ktt6qVugkQ9IlnjEUbKkmqBhORHDpnbk2_-d_P3w1-TL7nr4szHxslYskbuMQvlPj_jqWliXhRXsrcnxAQWvTtCvvBmUQwOTjpDW53m__wH9NvJJ6zs-RB5CIGD9JLtOYsA60e9BcbHcFwyR1khiE3B18BSEnrbrA51DBPVUHGrgshYp0RKzjgyOxpUGLpGtUHO15k_ntDL66o1QuvElNfXI_ucHBPP_iIxVVg">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Leather · LEA-MSG-412</span><span class="fulfillment-tag" style="background:#e0f2fe; color:#0369a1;">Lienzo Urbano Stock</span></div>
+<div class="product-title">Tuscan Cognac Vegetable Leather Messenger</div>
+<div class="product-desc">Piel curtida vegetal italiana de flor entera con herrajes de latón envejecido.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$340.00</span>
+<button class="btn btn-primary" onclick="addCart('Tuscan Cognac Vegetable Leather Messenger', 340)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 6 -->
+<div class="product-card" data-cat="cuero">
+<img alt="Nomad Minimalist Leather Cardholder" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY2HyZzLgPKMxc6S1_jGULCwU_Rpc6hq2L33Msg7f-2Dr11SsTdNp5_mOjmWmEh11GvYLOBGZvRvC_WQCN3ogZElyO7c-dKH3MyPG_z-K2Oe8zvQtPQ9kG0PcwiaTClYc7sF3-jQzSTcBHDgt3tWdD5rpacTQrVfWSaE4kb1Dra9K8--Stb13prnwkudxdGvKaQdi6G6E7LiKzY0QEIiekHM8qDTnC3RgCJrbZT1X8NGeMn0fdhVGx0A">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Leather · LEA-WAL-502</span><span class="fulfillment-tag" style="background:#e0f2fe; color:#0369a1;">Lienzo Urbano Stock</span></div>
+<div class="product-title">Nomad Minimalist Leather Cardholder</div>
+<div class="product-desc">Billetera compacta de piel italiana cosida a mano con protección RFID.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$55.00</span>
+<button class="btn btn-primary" onclick="addCart('Nomad Minimalist Leather Cardholder', 55)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 7 -->
+<div class="product-card" data-cat="ceramica">
+<img alt="Kanso Sculpted Stoneware Vessel" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpGiQfqdghfTEnK1AI2KAL6_O4nrBYWQ5EqIaOdiJRrpu6TfyrRJuOzeWZI0rxIYdYS6NzNlLTjTDhWMvjDUuskI1Sdg7m5_jWMH8IOyxGxpTa5J4dpBrq3fnKznj8cGxt5rruOREBCh-KaJyT6SALHBuC8S0xmpSpt4CwQP6iILgoE-QqNos9s5QKotJNkgm0LjH9lQWX-5QPANKRXzhzHhNV4Hf_WpBfMNuPYKTUXH55Aj2jEiqPRw">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Homeware · CER-KAN-108</span><span class="fulfillment-tag" style="background:#e0f2fe; color:#0369a1;">Lienzo Urbano Stock</span></div>
+<div class="product-title">Kanso Sculpted Stoneware Vessel</div>
+<div class="product-desc">Jarrón de gres torneado a mano con textura mate cruda mineral y silueta escultural.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$95.00</span>
+<button class="btn btn-primary" onclick="addCart('Kanso Sculpted Stoneware Vessel', 95)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 8 -->
+<div class="product-card" data-cat="ceramica">
+<img alt="Matte Ceramic Signature Mug" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv7zRRGYDLgeRU3h8Co7B-2GALHPIuIzmX6kD2Kc6c_hVZMXh-f1qq-VbGVW-K221DGCaCkIbVvU5f327KsXg_EvSN8ntMTRezRihoZGXTLZGNwTm8bvivSdjb7z-0OuectZ2T7X29EZ7mdKlcjJXoPEJOvsvOh8Hn3nYWm-6cfQEv2LbEOo-W09Imlnn_Ipzk2khpsuRi_cbdVnENoKzDtNM1d2zCRbXaxtxqgdM3mU-IDLgYZedjsg">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Merchandise · PRN-MUG-003</span><span class="fulfillment-tag">Printful Fulfilled</span></div>
+<div class="product-title">Matte Ceramic Signature Mug 15oz</div>
+<div class="product-desc">Taza de cerámica esmaltada de 15oz, sublimación bajo demanda Printful.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$24.00</span>
+<button class="btn btn-primary" onclick="addCart('Matte Ceramic Signature Mug 15oz', 24)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 9 -->
+<div class="product-card" data-cat="arte">
+<img alt="Machined Solid Brass Precision Pen" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3G3G__Pyx2h8PKRkSn21kR0khhiyIoV691YzuPT1OQuz6FYvq65UIwHLIPmARGCKoa6mgtvBEjOFVcnaMGJbuO6bReAdRmprG79dCDPS-XvLeM2MiTA4FEXlVvkZxSNxFLdmqFQT2Nn_yJl-Wodm6edB3wuvtQxAEFW0NkEeVXyt1PE7W8wFgXKim64KtgLK55WZ1BXnGYRKD5HAQwMWXn42T1cJ-rwm9ned4lpL5esXbntdXEF99sw">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Studio · STU-PEN-883</span><span class="fulfillment-tag" style="background:#e0f2fe; color:#0369a1;">Lienzo Urbano Stock</span></div>
+<div class="product-title">Machined Solid Brass Precision Pen</div>
+<div class="product-desc">Bolígrafo mecanizado en bloque de latón macizo con recambio cerámico Schmidt.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$78.00</span>
+<button class="btn btn-primary" onclick="addCart('Machined Solid Brass Precision Pen', 78)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 10 -->
+<div class="product-card" data-cat="arte">
+<img alt="Gallery Fine-Art Stretched Canvas" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXta2oMyNld7FWOtb2Bc_yLRDHcIlJgo1TJbCRUKh24xINC0Xwv3BTwa6KOBv9ny8vxNdrE-XYCgtb8pZiN_kog0HAGfYGEZIa7on30E1GQi1b-gVBEWe2PzNnnSsSa8tpgbS2fMBjIhOwxo6MygyV-h3QVUMPAfxUh5l-3pjP_t3KVEsqXWai_8uCjIObk1lDFErNL7jv0a-0lUBlcOTrWQuLdeCyVJJUQ1T6MZK7cPiA7TRUrBsqNA">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Canvas · PRN-CAN-120</span><span class="fulfillment-tag">Printful Fulfilled</span></div>
+<div class="product-title">Gallery Fine-Art Stretched Canvas</div>
+<div class="product-desc">Impresión Giclée fine-art sobre algodón de 380 GSM montado sobre bastidor FSC.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$110.00</span>
+<button class="btn btn-primary" onclick="addCart('Gallery Fine-Art Stretched Canvas', 110)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 11 -->
+<div class="product-card" data-cat="arte">
+<img alt="Archival Matte Street Poster" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyVXPXifGik0AwWAWLgq9eaR0Kix5IuikY5sRoOfzGpvw8X9Vz685qL-yPOxLpiSZLs7OUPa7b6qaLPv2ukEjxiSdL_NHyQ5zNopRQhXXV2nd5aHroCZ3ejWj6XnUU2KHUTpxal3VcqnzLfTueN8KBFXLjogubgl0nJL1eN8sIMd-jgmrZh5GkNilNnTqx1nm5SYBCJyEEDCugN8xHH3JF5MuyVm8pEYcN3YmaSCLmZyLUzDeSN_r7Lg">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Wall Art · PRN-POS-044</span><span class="fulfillment-tag">Printful Fulfilled</span></div>
+<div class="product-title">Archival Matte Street Poster 18x24</div>
+<div class="product-desc">Papel de museo 250 GSM con acabado mate antirreflejo y pigmentación duradera.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$32.00</span>
+<button class="btn btn-primary" onclick="addCart('Archival Matte Street Poster 18x24', 32)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- 12 -->
+<div class="product-card" data-cat="arte">
+<img alt="Optical Acrylic Street Panel 5mm" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK_ZubFntzytciRBEsbTfmZcLXI8BGsDv91gl1lWuqRGoZN3OGAkmURVOtM2eITRtzTOtqPmetdOgX0-LbForrkzAdRSK21KDRBibMXMFPX0aW3gZoeKE4DMfobmRnLX21Rdt3MPbmlWvUJyDS2noZsvi3GicgKoo-AQKtI2FrZ7rDS2j2OY7l9kpc1K7OOAWkFQqcUn-p6PfIy8CyRupjX8I5TNoSPnDPPsnHEpDn_n56Dc7IubbOnw">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Exhibition · ART-ACR-750</span><span class="fulfillment-tag" style="background:#e0f2fe; color:#0369a1;">Lienzo Urbano Stock</span></div>
+<div class="product-title">Optical Acrylic Street Panel 5mm</div>
+<div class="product-desc">Impresión UV directa sobre metacrilato con pernos de aluminio pulido.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$145.00</span>
+<button class="btn btn-primary" onclick="addCart('Optical Acrylic Street Panel 5mm', 145)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== 12-BOX CUSTOM MADE MATRIX ==================== -->
+<section class="matrix-section" id="custom-matrix" style="margin-top: 44px; background: rgb(234, 241, 250); border: 1px solid rgb(203, 216, 236); border-radius: 18px; padding: 28px; box-shadow: rgba(15, 28, 52, 0.25) 0px 10px 25px -5px;">
+<div class="matrix-header">
+<div>
+<span class="hero-badge">Producción Personalizada &amp; Drops</span>
+<h2 style="font-size: 22px; font-weight: 800;" class="">Matriz de Creación y Drops Custom Made</h2>
+<p style="font-size: 13px; color: var(--muted);" class="">12 módulos especializados para crear streetwear, arte y drops bajo demanda.</p>
+</div>
+<a class="btn btn-whatsapp" href="https://wa.me/525525433766" target="_blank">Cotizar por WhatsApp</a>
+</div>
+<!-- Line 1 -->
+<div class="matrix-row-title">Línea 1: Prendas Base &amp; Fits</div>
+<div class="matrix-grid-3">
+<div class="matrix-box">
+<img alt="Boxy Fit Heavyweight Tees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9QJf9kIuLPharQrflmCYrYs2Cu240rljVX8oeefRlMir8_HcLPSwitAZMEVZOS75P-eQawz9U9BnN0ZiXpG6bMRwmlyPjDsLpIPF6kCwApV42KRIiTV4uK7sEKyBQOSkkMuLQp8GUUtnvr2NgWIHAVvQW4WDQT--qTmVEHxYhnKgu4XIax47H8kf9k2e1frTrlSJMEdkqQzpht_rkkTTx_OlXxc7Fhmey-RZKsl0l7u7GJVcm2Mm2uw">
+<div>
+<span class="matrix-box-tag" style="background:#fef3c7; color:#92400e;">01 · Apparel Drop</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Boxy Fit Heavyweight Tees</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Algodón peinado 240 GSM, corte oversize, hombro caído y silueta estructurada.</p>
+<div class="matrix-spec">240 GSM · 100% Algodón · Boxy Fit</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #166534;" class="">✓ DTG Kornit HD</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Quiero%20cotizar%20Boxy%20Fit%20Tees" target="_blank">Personalizar</a>
+</div>
+</div>
+<div class="matrix-box">
+<img alt="Streetwear French Terry Hoodies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA39qYr9tFA2C0ie51gzDkqJUsLyz3RvrycPlIDB6vcCNpsgTP0UyH8qdI-U4d4mrAoOWhqQfc5B1-P_sREKBz7ko9AJfWgLJE7guoI761DTYicAJQE7IqUC5ZDYui4TAVZgJz8FOn3CVVe8BoDE-Rqr-rOQcLFXhfA65X-X9LBJAMs3SaTw_aq-GwvXNBEJ7FmsYqVFPYmi2VOJ6bsiv7NDn8UtkYE91WVTZo-B9T8BGWSw7wRXOeCOA">
+<div>
+<span class="matrix-box-tag" style="background:#fef3c7; color:#92400e;">02 · Apparel Drop</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Streetwear French Terry Hoodies</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">420 GSM felpa pesada francesa, capucha doble capa y corte limpio.</p>
+<div class="matrix-spec">420 GSM · French Terry · No-Drawstring</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #166534;" class="">✓ Printful DTG &amp; Puff</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Quiero%20cotizar%20Hoodies%20420%20GSM" target="_blank">Personalizar</a>
+</div>
+</div>
+<div class="matrix-box">
+<img alt="Crewneck Sweats" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdWBpq3eFO2P82mLBSVWmh7LRGJl299ZGCYi5FDp-WdaWsUnVCAXObWsPu52RraYDp5ye7OpbY9R8tkQtq1Zy-TlqNS4PLNWeNa0Q1wv4XpthjaTQqDWhvoLoI5d3CWhVKxAg0y2gLBPiJQJO7c_5n_YRQDXOntCikNqkkmCyzw9CorUef4ZvQuEqm2biN_MBEK_GucpOHo-KAP9bhWl0VjF4DD1QbHiT5RBx_zPANO821Aovyz9xs_g">
+<div>
+<span class="matrix-box-tag" style="background:#fef3c7; color:#92400e;">03 · Apparel Drop</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Crewneck Sweats &amp; Drop-Shoulder</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Algodón perchado 360 GSM, hombro caído con suavidad superior.</p>
+<div class="matrix-spec">360 GSM · Brushed Fleece</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #166534;" class="">✓ Bordado / DTG</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Quiero%20cotizar%20Crewnecks" target="_blank">Personalizar</a>
+</div>
+</div>
+</div>
+<!-- Line 2 -->
+<div class="matrix-row-title">Línea 2: Técnicas de Estampado &amp; Acabados</div>
+<div class="matrix-grid-3">
+<div class="matrix-box">
+<div>
+<span class="matrix-box-tag" style="background:#e0f2fe; color:#0369a1;">04 · Tech</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Impresión DTG Ultra-HD</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Inyección directa con tintas Kornit base agua, tacto suave y durabilidad en lavados.</p>
+<div class="matrix-spec">1200 DPI · Eco Water Inks · Soft Touch</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #0284c7;" class="">✓ Automatizado Printful</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Cotizar%20DTG%20Ultra-HD" target="_blank">Cotizar</a>
+</div>
+</div>
+<div class="matrix-box">
+<div>
+<span class="matrix-box-tag" style="background:#e0f2fe; color:#0369a1;">05 · Tech</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Bordado Táctil 3D &amp; Densidad Alta</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Bordado en relieve con espuma EVA para tipografías y parches streetwear.</p>
+<div class="matrix-spec">3D Foam · Madeira Polyneon</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #0284c7;" class="">✓ Acabado Tridimensional</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Cotizar%20Bordado%203D" target="_blank">Cotizar</a>
+</div>
+</div>
+<div class="matrix-box">
+<div>
+<span class="matrix-box-tag" style="background:#e0f2fe; color:#0369a1;">06 · Tech</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Serigrafía Puff &amp; Tintas Especiales</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Relieve vulcanizado térmico retro de los 90s con tacto expandido.</p>
+<div class="matrix-spec">Thermal Puff · Retro 90s Street Vibe</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #0284c7;" class="">✓ Atelier Especial</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Cotizar%20Serigrafia%20Puff" target="_blank">Cotizar</a>
+</div>
+</div>
+</div>
+<!-- Line 3 (with generated images) -->
+<div class="matrix-row-title">Línea 3: Lienzos de Arte &amp; Decoración Urbana</div>
+<div class="matrix-grid-3">
+<div class="matrix-box">
+<img alt="Lienzo Canvas Bastidor" src="https://lh3.googleusercontent.com/aida/AEtjO1Xbhxrz7S0w4Cy49UoARfXgs887Rr0WPiiHWUjE8ZADzDfJ6OKenGySmZkeGNtw6Np7_5x5iKK3gWBy_THN0tOT8YVzAKo9ckhWWK2gCkuNPGos8ZWG50nBfYuvOkFRdp9cGxIhEy7K_-VmrkvwNQpQ913EL52j21qV2MwgamxvnVSh7lfwa2eTUX2w62J32moB7-W_tocexsD-SJ73aeAgn0celnhK-t2WTFjeGPBfv7lO1nJP7WvEAwg">
+<div>
+<span class="matrix-box-tag" style="background:#ede9fe; color:#5b21b6;">07 · Arte</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Lienzo Canvas Montado en Bastidor</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Giclée sobre algodón 380 GSM con bastidor de pino macizo certificado FSC.</p>
+<div class="matrix-spec">380 GSM · Pino FSC 1.5"</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #6d28d9;" class="">✓ Calidad Museo</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Cotizar%20Lienzo%20Canvas" target="_blank">Cotizar</a>
+</div>
+</div>
+<div class="matrix-box">
+<img alt="Pósters Matte de Alta Resolución" src="https://lh3.googleusercontent.com/aida/AEtjO1WDwjficJYqVt21s6YxEd2jw1BXlRqBDN9jkfTxJurIqs7vci0sn4W9UFjq8nCvWH91aivC4dmL9TZGXQZ7pa76OKLLQVifPbyJw7Lze1ifintJSTp7zQeGX65YZx780caecOI57ByqB6ZHsA70QtiihwnDEBg7CnnMnDGsYVOVo1l_bkqTbuno9f16OTzqsgX7E2c-XXF02u6rtDZ3XZv4EYwbxkerahUMs3mSM_1SeWyKSDcet-6fbJY">
+<div>
+<span class="matrix-box-tag" style="background:#ede9fe; color:#5b21b6;">08 · Arte</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Pósters Matte de Alta Resolución</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Papel artístico de 250 GSM con negros profundos y cero reflejos.</p>
+<div class="matrix-spec">250 GSM Matte · UV Fade Resistant</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #6d28d9;" class="">✓ Printful Webhook POD</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Cotizar%20Posters%20Matte" target="_blank">Cotizar</a>
+</div>
+</div>
+<div class="matrix-box">
+<img alt="Acrílico Transparente &amp; Placas Metálicas" src="https://lh3.googleusercontent.com/aida/AEtjO1U3x-adfqEYi74iez6GNDWCLx4rt65TjhlBW_YQRaH8xb3FfSiTKYyF8Gnuvq13YNqfVeqn_6vp9fwPRbE3fZLLDC39WXur1RAiwrFUnMWUpB7orqGXjuPwgr7QNHvzbCsH0pZ9qsQrBbbX4yK5knZ6TdNiEAp_Hw4k_cSvrHthQH-kX4djPl1gU2IXsrvZDFOb4CqyZAqGTvhQIkOQx1TeVHw13fj6LI-yvMkW6xmwJBLhO2DOufYdJ2OC">
+<div>
+<span class="matrix-box-tag" style="background:#ede9fe; color:#5b21b6;">09 · Arte</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Acrílico Transparente &amp; Placas Metálicas</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Impresión UV curada directa sobre metacrilato óptico de 5mm con pernos flotantes.</p>
+<div class="matrix-spec">5mm Acrylic · Pernos Inox Flotantes</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #6d28d9;" class="">✓ Grado Galería</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Cotizar%20Acrilico%20UV" target="_blank">Cotizar</a>
+</div>
+</div>
+</div>
+<!-- Line 4 (with generated images) -->
+<div class="matrix-row-title">Línea 4: Servicios para Creadores &amp; Marcas</div>
+<div class="matrix-grid-3">
+<div class="matrix-box">
+<img alt="Etiquetado Personalizado" src="https://lh3.googleusercontent.com/aida/AEtjO1WUAskrIqb9D5vk0HTvsQlVUEw7MkhXanVaGbDMEwarK1teDT_abM9rnDKDg1X5kuEvsF8QbWRS_S_cgPpa6A1Plmztgjr9botB9vLqXSCD-3nnm12a-YN8tU0-kR8W15N3t9sFMnE-ratRrzgHUNqtdVXbYtr4RMZx64Bdt6N1eJBoABTtMXvW5LtrqzxS0P2Kwq8P2I6NRn7YWgG2u5Mb8mBSJs6CUPIq-BJoF8Z9uneZNL0D27dfdF0">
+<div>
+<span class="matrix-box-tag" style="background:#dcfce7; color:#166534;">10 · Branding</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Etiquetado Personalizado &amp; Cuello</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Woven labels tejidas, estampados interiores en cuello y packaging de marca propia.</p>
+<div class="matrix-spec">White-Label · Woven Labels</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #166534;" class="">✓ 100% Tu Marca</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Cotizar%20Etiquetas%20de%20Cuello" target="_blank">Cotizar</a>
+</div>
+</div>
+<div class="matrix-box">
+<img alt="Mockups 3D en 24h" src="https://lh3.googleusercontent.com/aida/AEtjO1VcTK5mWtx_YMD3R3x1OzVv1KS1gbaHHPfMi8P4qnt5_Nh_i9NUYt3hkIYHGEPIG7b3LUVW8ZpmGJOy4kwGvepNAYLrsmkyYLc8jYoZ8XUodSa13j9uNfEyhiD3rEqvygVcKCu9_AibdUGgUNBPJJKkZ6fu2gzYDvEZ2nNvon5GrpwH7WtllCJhR2rpb2jrIfKt3YaarmE4PFDqOJnRfZ9rQmxNDueBeL3e0teXneQb_zWVyZSseNcXWzlY">
+<div>
+<span class="matrix-box-tag" style="background:#dcfce7; color:#166534;">11 · 3D Lab</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Mockups &amp; Renders 3D en 24 Horas</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Renders 4K fotorrealistas de tus prendas y drops antes de imprimir una sola pieza.</p>
+<div class="matrix-spec">4K Renders · Maniquí Streetwear · 24h</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #166534;" class="">✓ Validación Cero Riesgo</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Solicitar%20Render%203D" target="_blank">Cotizar</a>
+</div>
+</div>
+<div class="matrix-box">
+<img alt="Integración Dropshipping &amp; Printful Direct" src="https://lh3.googleusercontent.com/aida/AEtjO1WfWLRIBsh5WgkiAMLzMY9S1VzWZbMsMYjW9UjFX-b8eablNvf1ya6eQTrig1NJDdoies6asHnkQNBj2XIz3PlwD1a-1EfFpIMIpZGBLbRjB9UvXTVKCpXW7FsN-0Lr7xK9n1f6guX1zlFczDoJjLmsCO0jLInbc5WFq78zZxF-qbrXClWPgGAJKLPtfEsfeCJf_ugqlWDt9_lrqU1PPmvwZ9fxD08pcMHjyxQ574I255vC0j1jdV4PyWP6">
+<div>
+<span class="matrix-box-tag" style="background:#dcfce7; color:#166534;">12 · Automatización</span>
+<h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;" class="">Integración Dropshipping &amp; Printful Direct</h3>
+<p style="font-size: 12px; color: var(--muted);" class="">Despacho automatizado a clientes con sincronización de inventario y tracking real.</p>
+<div class="matrix-spec">REST API · Auto Routing · Zero Stock</div>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 11px; font-weight: 700; color: #166534;" class="">✓ Cloud Escalable</span>
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Integrar%20Dropshipping" target="_blank">Cotizar</a>
+</div>
+</div>
+</div>
+</section><!-- ==================== SECCIÓN: TESTIMONIOS VERIFICADOS ==================== -->
+<section style="margin-top: 44px; background: rgb(234, 241, 250); border: 1px solid rgb(203, 216, 236); border-radius: 18px; padding: 32px 28px; box-shadow: rgba(15, 28, 52, 0.25) 0px 10px 25px -5px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+<div>
+<span class="hero-badge">Opiniones &amp; Experiencias Reales</span>
+<h2 data-en="Customer Reviews &amp; Verified Case Studies" data-es="Testimonios &amp; Reseñas de Clientes Verificados" style="font-size: 24px; font-weight: 800; margin-top: 4px;" class="">Testimonios &amp; Reseñas de Clientes Verificados</h2>
+<p data-en="Discover what streetwear brands, designers, and visual artists say about working with Lienzo Urbano." data-es="Descubre lo que dicen diseñadores, artistas visuales y marcas streetwear sobre Lienzo Urbano." style="font-size: 13px; color: var(--muted); margin-top: 4px;" class="">Descubre lo que dicen diseñadores, artistas visuales y marcas streetwear sobre Lienzo Urbano.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; background: rgb(243, 247, 253); border: 1px solid rgb(203, 216, 236); padding: 8px 14px; border-radius: 10px;">
+<span style="color: #f59e0b; font-size: 18px;" class="">★★★★★</span>
+<span style="font-size: 12px; font-weight: 700; color: #1c1917;" class="">4.9 / 5.0 (98+ Reseñas)</span>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+<!-- Testimonio 1 -->
+<div style="background: rgb(244, 248, 253); border: 1px solid rgb(210, 224, 240); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+<div style="color: #f59e0b; font-size: 15px; letter-spacing: 2px;" class="">★★★★★</div>
+<span style="font-size: 10px; font-weight: 700; color: #166534; background: #dcfce7; padding: 2px 7px; border-radius: 4px;" class="">✓ Verificado</span>
+</div>
+<p data-en="«The quality of the 240 GSM heavy boxy tees and sharpness of the DTG print exceeded our expectations. Our drops sold out in 48 hours and Printful sync automated fulfillment seamlessly.»" data-es="«La calidad de las playeras pesadas de 240 GSM y la nitidez de la impresión DTG superaron nuestras expectativas. Nuestros drops se agotaron en 48 horas y la sincronización con Printful automatizó todo el envío.»" style="font-size: 13px; color: #44403c; line-height: 1.6; font-style: italic; margin-bottom: 16px;" class="">«La calidad de las playeras pesadas de 240 GSM y la nitidez de la impresión DTG superaron nuestras expectativas. Nuestros drops se agotaron en 48 horas y la sincronización con Printful automatizó todo el envío.»</p>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid #e7e5e4; padding-top: 14px;">
+<img src="https://lh3.googleusercontent.com/aida/AEtjO1V3N3SAzcvTrnDGIQ2-P3Zp_aksd0qwMgtPkqpTntOh-MjZX533ZGggjZU9Qj3g5zsqTjAIAMVNdrRR2ZCNYd4zvZ3fl6NtZF_wa2zvgHP-BHkR1a408ghAJsONBheVYMEORSacysGObjBL5IvjIsIDKDstlEbgUmRdOY6NNDibKUeSvgMmBTdJjHicp_KP2av8YxMeJveNXvntnDLxdtbp0ldk2mJodEn6HAjG-6qJHjCEAYCs3qurI4Kk" alt="Mateo Silva" class="w-12 h-12 rounded-full object-cover shadow-sm" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid rgb(56, 189, 248); box-shadow: rgba(56, 189, 248, 0.5) 0px 0px 12px;">
+<div>
+<div style="font-size: 13px; font-weight: 800; color: #1c1917;" class="">Mateo Silva</div>
+<div style="font-size: 11px; color: var(--muted);" class="">Fundador · Brand Underground (CDMX)</div>
+</div>
+</div>
+</div>
+<!-- Testimonio 2 -->
+<div style="background: rgb(244, 248, 253); border: 1px solid rgb(210, 224, 240); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+<div style="color: #f59e0b; font-size: 15px; letter-spacing: 2px;" class="">★★★★★</div>
+<span style="font-size: 10px; font-weight: 700; color: #166534; background: #dcfce7; padding: 2px 7px; border-radius: 4px;" class="">✓ Verificado</span>
+</div>
+<p data-en="«The pine frame mounted canvases and Giclée fine-art print have exact color fidelity to my digital files. My clients were completely stunned by the finishes.»" data-es="«Los lienzos montados en bastidor de pino y la impresión fine-art Giclée tienen una fidelidad de color idéntica a mis archivos digitales. Mis clientes quedaron fascinados con los acabados.»" style="font-size: 13px; color: #44403c; line-height: 1.6; font-style: italic; margin-bottom: 16px;" class="">«Los lienzos montados en bastidor de pino y la impresión fine-art Giclée tienen una fidelidad de color idéntica a mis archivos digitales. Mis clientes quedaron fascinados con los acabados.»</p>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid #e7e5e4; padding-top: 14px;">
+<img src="https://lh3.googleusercontent.com/aida/AEtjO1VaAV3fj6eVZESX_pxJ8EY6tHTuAY1vjzR4ZK8qDCeAdbf3zRf4Edo0CDe1cZ78fJEcu8bpXIZo5ET6stNlCWpMl31RJ0DHnj323MmSLgS4Gef-yXVOlGEYwbR7iTNFF-ihcX68wh7B8mlQsbh1pTRo1XE2Q9r5UqeOrkjTKxlIcnWsky81uHUQ7ikxrAYPjy-jW37NPU30-hSMGBaNsFtmL7JYXFCbKgCvT53qsgat8cUzwvBNkU-xpdSt" alt="Sofía Valenzuela" class="w-12 h-12 rounded-full object-cover shadow-sm" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid rgb(56, 189, 248); box-shadow: rgba(56, 189, 248, 0.5) 0px 0px 12px;">
+<div>
+<div style="font-size: 13px; font-weight: 800; color: #1c1917;" class="">Sofía Valenzuela</div>
+<div style="font-size: 11px; color: var(--muted);" class="">Artista Visual &amp; Ilustradora (Guadalajara)</div>
+</div>
+</div>
+</div>
+<!-- Testimonio 3 -->
+<div style="background: rgb(244, 248, 253); border: 1px solid rgb(210, 224, 240); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+<div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+<div style="color: #f59e0b; font-size: 15px; letter-spacing: 2px;" class="">★★★★★</div>
+<span style="font-size: 10px; font-weight: 700; color: #166534; background: #dcfce7; padding: 2px 7px; border-radius: 4px;" class="">✓ Verificado</span>
+</div>
+<p data-en="«Ordering quick samples and contacting directly via WhatsApp (+52 55 2543 3766) accelerated our capsule collection launch. Technical support and timely delivery are top-notch.»" data-es="«Poder ordenar muestras rápidas y contactar directamente por WhatsApp (+52 55 2543 3766) agilizó el lanzamiento de nuestra colección cápsula. El soporte técnico y la entrega puntual son de diez.»" style="font-size: 13px; color: #44403c; line-height: 1.6; font-style: italic; margin-bottom: 16px;" class="">«Poder ordenar muestras rápidas y contactar directamente por WhatsApp (+52 55 2543 3766) agilizó el lanzamiento de nuestra colección cápsula. El soporte técnico y la entrega puntual son de diez.»</p>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; border-top: 1px solid #e7e5e4; padding-top: 14px;">
+<img src="https://lh3.googleusercontent.com/aida/AEtjO1WmMB51YxDfo-Y9J2x8cUt5rOfbbw9HrxAvVujMEIKKZqpoOJZeYcPjI_cH_zzCH3LmqfKNbG6jeHd0JrHRVe1jM2ykx7CG6mUkLlKAk_B9OJ3dvrLFOUEFvZnuB7ZmBofvkeok5G4A6yN5xTz8qbiZ7uGKuwFdOiC2fj3vwPj6Xd_zjbUcjj0TCgqutU3Au7CKH2Ir-N0EtQXAug2xcFzEM2ciuqDVIcEdoGYPAP73ZyLWbhGk6BGj-Xk" alt="Carlos Mendoza" class="w-12 h-12 rounded-full object-cover shadow-sm" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid rgb(56, 189, 248); box-shadow: rgba(56, 189, 248, 0.5) 0px 0px 12px;">
+<div>
+<div style="font-size: 13px; font-weight: 800; color: #1c1917;" class="">Carlos Mendoza</div>
+<div style="font-size: 11px; color: var(--muted);" class="">Director Creativo · Estudio Kanso (Monterrey)</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== SECCIÓN: PREGUNTAS FRECUENTES (Q&A) ==================== -->
+<section style="margin-top: 40px; background: rgb(234, 241, 250); border: 1px solid rgb(203, 216, 236); border-radius: 18px; padding: 32px 28px; box-shadow: rgba(15, 28, 52, 0.25) 0px 10px 25px -5px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+<div>
+<span class="hero-badge">Soporte Técnico &amp; FAQ</span>
+<h2 data-en="Frequently Asked Questions (Q&amp;A)" data-es="Preguntas Frecuentes (Q&amp;A Lienzo Urbano)" style="font-size: 24px; font-weight: 800; margin-top: 4px;" class="">Preguntas Frecuentes (Q&amp;A Lienzo Urbano)</h2>
+<p data-en="Everything you need to know about on-demand production, lead times, print specs, and custom drops." data-es="Todo lo que necesitas saber sobre producción bajo demanda, tiempos de envío, calidad y cotizaciones personalizadas." style="font-size: 13px; color: var(--muted); margin-top: 4px;" class="">Todo lo que necesitas saber sobre producción bajo demanda, tiempos de envío, calidad y cotizaciones personalizadas.</p>
+</div>
+<a class="btn btn-whatsapp" href="https://wa.me/525525433766?text=Hola%2C%20tengo%20una%20duda%20adicional%20sobre%20mi%20pedido" target="_blank">
+<span class="material-symbols-outlined" style="font-size: 16px;">chat</span>
+<span data-en="Ask via WhatsApp" data-es="Preguntar por WhatsApp" class="">Preguntar por WhatsApp</span>
+</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px;">
+<!-- Q1 -->
+<details style="background: rgb(244, 248, 253); border: 1px solid rgb(210, 224, 240); border-radius: 12px; padding: 16px 20px; cursor: pointer;">
+<summary style="font-size: 15px; font-weight: 700; color: #1c1917; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+<span data-en="1. What is the production and fulfillment turnaround for on-demand drops and custom orders?" data-es="1. ¿Cuál es el tiempo de producción y despacho para pedidos personalizados y drops bajo demanda?" class="">1. ¿Cuál es el tiempo de producción y despacho para pedidos personalizados y drops bajo demanda?</span>
+<span class="material-symbols-outlined" style="color: #78716c; font-size: 20px;">expand_more</span>
+</summary>
+<p data-en="On-demand orders fulfilled through Printful take an average of 2 to 4 business days for production, plus 3 to 5 business days for insured express shipping with live tracking (FedEx/DHL). For custom bulk productions, we schedule the timeline directly via WhatsApp." data-es="Los pedidos bajo demanda procesados mediante Printful tienen un tiempo de producción promedio de 2 a 4 días hábiles, más 3 a 5 días de envío asegurado con guía de rastreo en tiempo real (FedEx/DHL). Para producciones custom en lote, coordinamos el calendario directamente vía WhatsApp." style="margin-top: 12px; font-size: 13px; color: #57534e; line-height: 1.6; border-top: 1px solid #e7e5e4; padding-top: 12px;" class="">Los pedidos bajo demanda procesados mediante Printful tienen un tiempo de producción promedio de 2 a 4 días hábiles, más 3 a 5 días de envío asegurado con guía de rastreo en tiempo real (FedEx/DHL). Para producciones custom en lote, coordinamos el calendario directamente vía WhatsApp.</p>
+</details>
+<!-- Q2 -->
+<details style="background: rgb(244, 248, 253); border: 1px solid rgb(210, 224, 240); border-radius: 12px; padding: 16px 20px; cursor: pointer;">
+<summary style="font-size: 15px; font-weight: 700; color: #1c1917; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+<span data-en="2. Can I order a single sample before launching a full streetwear collection?" data-es="2. ¿Puedo pedir una sola muestra antes de lanzar una colección completa?" class="">2. ¿Puedo pedir una sola muestra antes de lanzar una colección completa?</span>
+<span class="material-symbols-outlined" style="color: #78716c; font-size: 20px;">expand_more</span>
+</summary>
+<p data-en="Yes! Thanks to our Print-on-Demand infrastructure, you can order starting from just one piece with no minimum order quantity (MOQ) to test fabric weight, print touch, and fit accuracy." data-es="Sí, gracias a nuestra infraestructura de impresión bajo demanda (Print-on-Demand) puedes ordenar desde una sola pieza sin mínimos requeridos para validar gramaje, tacto del estampado y tallaje exacto." style="margin-top: 12px; font-size: 13px; color: #57534e; line-height: 1.6; border-top: 1px solid #e7e5e4; padding-top: 12px;" class="">Sí, gracias a nuestra infraestructura de impresión bajo demanda (Print-on-Demand) puedes ordenar desde una sola pieza sin mínimos requeridos para validar gramaje, tacto del estampado y tallaje exacto.</p>
+</details>
+<!-- Q3 -->
+<details style="background: rgb(244, 248, 253); border: 1px solid rgb(210, 224, 240); border-radius: 12px; padding: 16px 20px; cursor: pointer;">
+<summary style="font-size: 15px; font-weight: 700; color: #1c1917; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+<span data-en="3. How should artwork files be configured for optimal printing quality?" data-es="3. ¿Cómo deben estar configurados mis archivos de diseño para obtener la máxima calidad?" class="">3. ¿Cómo deben estar configurados mis archivos de diseño para obtener la máxima calidad?</span>
+<span class="material-symbols-outlined" style="color: #78716c; font-size: 20px;">expand_more</span>
+</summary>
+<p data-en="We recommend sending high-resolution PNG files with transparent backgrounds, at least 300 DPI at true print dimensions, in sRGB or calibrated CMYK. Our atelier team also performs a pre-print quality assurance check." data-es="Recomendamos enviar archivos en formato PNG con fondo transparente, resolución mínima de 300 DPI a tamaño real de impresión, y espacio de color sRGB o CMYK optimizado. Nuestro equipo también realiza una previsualización de control de calidad." style="margin-top: 12px; font-size: 13px; color: #57534e; line-height: 1.6; border-top: 1px solid #e7e5e4; padding-top: 12px;" class="">Recomendamos enviar archivos en formato PNG con fondo transparente, resolución mínima de 300 DPI a tamaño real de impresión, y espacio de color sRGB o CMYK optimizado. Nuestro equipo también realiza una previsualización de control de calidad.</p>
+</details>
+<!-- Q4 -->
+<details style="background: rgb(244, 248, 253); border: 1px solid rgb(210, 224, 240); border-radius: 12px; padding: 16px 20px; cursor: pointer;">
+<summary style="font-size: 15px; font-weight: 700; color: #1c1917; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+<span data-en="4. What payment and invoicing options do you accept on lienzourbano.shop?" data-es="4. ¿Qué métodos de pago y facturación aceptan en lienzourbano.shop?" class="">4. ¿Qué métodos de pago y facturación aceptan en lienzourbano.shop?</span>
+<span class="material-symbols-outlined" style="color: #78716c; font-size: 20px;">expand_more</span>
+</summary>
+<p data-en="We accept credit/debit cards (Visa, Mastercard, AMEX), PayPal, bank transfers, and local payment methods through our secure WooCommerce gateway. We provide tax invoices upon request." data-es="Aceptamos tarjetas de crédito y débito (Visa, Mastercard, AMEX), PayPal, transferencias bancarias y pagos en efectivo locales a través de la pasarela segura integrada en WooCommerce. Emitimos factura fiscal si la requieres." style="margin-top: 12px; font-size: 13px; color: #57534e; line-height: 1.6; border-top: 1px solid #e7e5e4; padding-top: 12px;" class="">Aceptamos tarjetas de crédito y débito (Visa, Mastercard, AMEX), PayPal, transferencias bancarias y pagos en efectivo locales a través de la pasarela segura integrada en WooCommerce. Emitimos factura fiscal si la requieres.</p>
+</details>
+<!-- Q5 -->
+<details style="background: rgb(244, 248, 253); border: 1px solid rgb(210, 224, 240); border-radius: 12px; padding: 16px 20px; cursor: pointer;">
+<summary style="font-size: 15px; font-weight: 700; color: #1c1917; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+<span data-en="5. How can I request a special quote or custom support?" data-es="5. ¿Cómo puedo solicitar una cotización especial o atención personalizada?" class="">5. ¿Cómo puedo solicitar una cotización especial o atención personalizada?</span>
+<span class="material-symbols-outlined" style="color: #78716c; font-size: 20px;">expand_more</span>
+</summary>
+<p data-en="You can reach our atelier team directly via WhatsApp at +52 55 2543 3766 or through the floating action button to get tailored advice on fabric samples, special techniques (Puff, 3D embroidery), or store integrations." data-es="Puedes comunicarte inmediatamente con nuestro equipo de atención directa a través de WhatsApp al +52 55 2543 3766 o desde el botón flotante en la tienda para asesorarte con muestras, técnicas especiales (Puff, 3D) o integración con tu tienda." style="margin-top: 12px; font-size: 13px; color: #57534e; line-height: 1.6; border-top: 1px solid #e7e5e4; padding-top: 12px;" class="">Puedes comunicarte inmediatamente con nuestro equipo de atención directa a través de WhatsApp al +52 55 2543 3766 o desde el botón flotante en la tienda para asesorarte con muestras, técnicas especiales (Puff, 3D) o integración con tu tienda.</p>
+</details>
+</div>
+</section>
+</section>
+<!-- ==================== TAB 2: BLOG (CON 3 ARTÍCULOS SEO BILINGÜES + WOO 4x3 & SLIDER) ==================== -->
+<section class="tab-pane" id="tab-blog" style="display: none;">
+<div style="margin-bottom: 24px;">
+<span class="hero-badge">Magazine &amp; Guías Técnicas SEO · Cuaderno Lienzo Urbano</span>
+<h1 style="font-size: 28px; font-weight: 800;" class="">Artículos &amp; Guías de Streetwear, Calidad Textil e Impresión de Galería</h1>
+<p style="color: var(--muted); font-size: 14px; max-width: 720px; margin-top: 6px;" class="">
+        Contenido formativo de alto valor para clientes, coleccionistas y creadores de marcas de ropa urbana. Información técnica, consejos de durabilidad y estándares de producción.
+      </p>
+</div>
+<!-- 3 ARTÍCULOS SEO BILINGÜES -->
+<div class="blog-grid">
+<!-- ARTÍCULO 1 -->
+<article class="blog-card">
+<img alt="Guía de Gramajes Streetwear 240 GSM vs 420 GSM" class="blog-card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0mVBz2WIClo_-si2X7D_JN4k5BNc5KgdJqwtpng4OvROMWQc10b4_aEH6ovIoBEFWFyCgxwuM-vZ4nEH7s50cDH25VQvYVamJMDh5N7xxo7wUEUciFfqrrfzzCJoddfxVelAce6xTyj2EYTL4LqpMbl8RaKewAJ-NepHSctJm--owbCI4JUAkoK8slDYSUg7rZHR6dBHuwynCAxGsjBMWQ2cLYobw_oQUDwUxxm0f">
+<div class="blog-card-body">
+<div>
+<div class="blog-tag-meta">
+<span class="blog-pill">Textil &amp; Calidad</span>
+<span style="color: #a8a29e;" class="">5 min lectura · SEO Guide</span>
+</div>
+<h2 class="article-title" data-en="Ultimate Streetwear Fabric Weight Guide: 240 GSM vs 420 GSM" data-es="Guía Definitiva de Gramajes en Streetwear: 240 GSM vs 420 GSM">
+              Guía Definitiva de Gramajes en Streetwear: 240 GSM vs 420 GSM
+            </h2>
+<p class="article-excerpt" data-en="Why does weight define true streetwear? Learn how 240 GSM combed organic cotton creates structured boxy tees that don't sag, while 420 GSM French Terry gives hoodies their iconic draping and lifetime durability without fading." data-es="¿Por qué el gramaje define el streetwear auténtico? Descubre cómo el algodón orgánico peinado de 240 GSM genera camisetas estructuradas que no pierden forma, y cómo la felpa French Terry de 420 GSM otorga a las sudaderas su caída icónica y resistencia por años.">
+              ¿Por qué el gramaje define el streetwear auténtico? Descubre cómo el algodón orgánico peinado de 240 GSM genera camisetas estructuradas que no pierden forma, y cómo la felpa French Terry de 420 GSM otorga a las sudaderas su caída icónica y resistencia por años.
+            </p>
+<div class="article-keypoints">
+<strong>Claves para el cliente:</strong><br>
+              • <strong>240 GSM (Camisetas):</strong> Densidad pesada que disimula imperfecciones, hombro caído y cuello reforzado con rib 1x1.<br>
+              • <strong>420 GSM (Sudaderas):</strong> Aislamiento térmico superior, sin cordones para estética minimalista y lavado pre-encogido.
+            </div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 12px;">
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Hola%20Lienzo%20Urbano%2C%20lei%20su%20articulo%20de%20gramajes%20240%20y%20420%20GSM%20y%20quiero%20cotizar" style="font-size: 11px;" target="_blank">
+<span class="">Consultar Prendas por WhatsApp</span>
+</a>
+<span style="font-size: 11px; color: #166534; font-weight: 700;" class="">✓ Verificado Atelier</span>
+</div>
+</div>
+</article>
+<!-- ARTÍCULO 2 -->
+<article class="blog-card">
+<img alt="Cómo Preparar Diseños para DTG" class="blog-card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOB7Qts9DuIn4KlBYYbcLzHhZFLfMJRKXVys69ZcxTO5_0-pFws1sQK2eoWEuekaUm3l5EiIVvmL7157XUoZk3NeT1Qh29jVPw6jyNevbL9iOxGvHvdq08K8F7JQdhYoX-KX4Vfd52HJLKN0McmRP4bTTJ74CkUbWezAX7S7Z9F1Tmuq82lMESNn2NEzRCPFXgnlfgo4QZRERqKql2IkQvDUvm8pxErQ8fhn9noRHM">
+<div class="blog-card-body">
+<div>
+<div class="blog-tag-meta">
+<span class="blog-pill" style="background:#e0f2fe; color:#0369a1;">Técnica &amp; Color</span>
+<span style="color: #a8a29e;" class="">6 min lectura · Print Guide</span>
+</div>
+<h2 class="article-title" data-en="How to Prepare Artwork for DTG &amp; Screen Printing without Color Loss" data-es="Cómo Preparar tus Diseños para DTG y Serigrafía sin Pérdida de Color">
+              Cómo Preparar tus Diseños para DTG y Serigrafía sin Pérdida de Color
+            </h2>
+<p class="article-excerpt" data-en="Avoid dull prints. Master color calibration with sRGB vs CMYK profiles, 300 DPI transparency clipping, underbase white ink optimization for dark garments, and stroke weights to ensure your digital art looks vibrant on fabric." data-es="Evita estampados opacos o deslavados. Aprende la calibración cromática correcta con perfiles sRGB vs CMYK, fondos transparentes a 300 DPI, capa base de blanco para prendas oscuras y grosores de línea mínimos para que tu arte conserve cada matiz.">
+              Evita estampados opacos o deslavados. Aprende la calibración cromática correcta con perfiles sRGB vs CMYK, fondos transparentes a 300 DPI, capa base de blanco para prendas oscuras y grosores de línea mínimos para que tu arte conserve cada matiz.
+            </p>
+<div class="article-keypoints">
+<strong>Checklist Técnico Profesional:</strong><br>
+              • Archivos PNG en espacio sRGB IEC61966-2.1 a 300 DPI reales.<br>
+              • Sin degradados a transparencia parcial (evita halos grisáceos en tela negra).<br>
+              • Líneas mínimas de 1.5 pt para bordado y 0.8 pt para impresión digital.
+            </div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 12px;">
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Hola%2C%20quiero%20revisar%20mi%20archivo%20de%20dise%C3%B1o%20para%20DTG%20segun%20su%20guia" style="font-size: 11px;" target="_blank">
+<span class="">Validar mi Diseño en WhatsApp</span>
+</a>
+<span style="font-size: 11px; color: #0284c7; font-weight: 700;" class="">✓ Formato Printful</span>
+</div>
+</div>
+</article>
+<!-- ARTÍCULO 3 -->
+<article class="blog-card">
+<img alt="Lienzo Canvas vs Acrílico UV" class="blog-card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6m6cTODQ5EZqFItNXb5yOo0X7c_VEt5ONJjG7_ctNmx2NlRkBNTraq2JWbM53t31LjKjBWIe20uZ2Te1TUj0880-Z3rd-p-Nsqwha-PYUu9SOZjXvi01t_r0YJ_zwv6SOc7SVmQZt5Js8bQdQ8YUWcb8FUL3MO-cpyiA-twCAhmM9z3pyglGtRHTCA4SwZNFf8qIXMLbyeNL69mzQS7WoC7uCiq2mm37toe0lBpFh">
+<div class="blog-card-body">
+<div>
+<div class="blog-tag-meta">
+<span class="blog-pill" style="background:#ede9fe; color:#5b21b6;">Galería &amp; Decoración</span>
+<span style="color: #a8a29e;" class="">4 min lectura · Art Guide</span>
+</div>
+<h2 class="article-title" data-en="Fine Art Gallery Printing: Canvas vs Optical Acrylic UV" data-es="Impresión de Arte de Galería: Cuándo Elegir Lienzo Canvas vs Acrílico UV">
+              Impresión de Arte de Galería: Cuándo Elegir Lienzo Canvas vs Acrílico UV
+            </h2>
+<p class="article-excerpt" data-en="Choosing between warm tactile canvas and high-gloss modern acrylic: compare light absorption, archival longevity (100+ years), room lighting conditions, and mounting hardware for museum-grade wall presentations." data-es="La elección decisiva entre la calidez táctil del algodón y el brillo tridimensional del metacrilato: comparamos absorción lumínica, resistencia UV por más de 100 años, iluminación de interiores y montajes flotantes para transformar cualquier espacio.">
+              La elección decisiva entre la calidez táctil del algodón y el brillo tridimensional del metacrilato: comparamos absorción lumínica, resistencia UV por más de 100 años, iluminación de interiores y montajes flotantes para transformar cualquier espacio.
+            </p>
+<div class="article-keypoints">
+<strong>Comparativa Directa:</strong><br>
+              • <strong>Lienzo Canvas (380 GSM):</strong> Cero reflejos, textura pictórica clásica, montaje sobre madera de pino FSC de 1.5 pulgadas.<br>
+              • <strong>Acrílico Óptico (5mm):</strong> Profundidad 3D impactante, colores saturados y pernos de aluminio pulido flotantes.
+            </div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 12px;">
+<a class="btn btn-primary" href="https://wa.me/525525433766?text=Hola%2C%20quiero%20asesoria%20para%20imprimir%20un%20lienzo%20canvas%20o%20acrilico" style="font-size: 11px;" target="_blank">
+<span class="">Cotizar Obra en WhatsApp</span>
+</a>
+<span style="font-size: 11px; color: #6d28d9; font-weight: 700;" class="">✓ Grado Galería</span>
+</div>
+</div>
+</article>
+</div>
+<!-- SECCIÓN WOOCOMMERCE 4x3 REPLICADA EN LA PÁGINA DEL BLOG -->
+<div style="margin-top: 48px; border-top: 2px solid var(--border); padding-top: 36px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
+<div>
+<span class="hero-badge">Catálogo Integrado en Blog</span>
+<h2 style="font-size: 22px; font-weight: 800;" class="">Piezas Físicas Disponibles en WooCommerce (Cuadrícula 4x3)</h2>
+<p style="font-size: 13px; color: var(--muted);" class="">Adquiere las prendas y lienzos descritos en nuestros artículos con producción automatizada.</p>
+</div>
+<button class="btn btn-outline" onclick="switchTab('tienda')" style="color: #1c1917; border-color: #1c1917;">Ir a Tienda Principal</button>
+</div>
+<div class="grid-woocommerce-4x3">
+<!-- Item 1 -->
+<div class="product-card">
+<img alt="Heavyweight Organic Boxy Tee" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9QJf9kIuLPharQrflmCYrYs2Cu240rljVX8oeefRlMir8_HcLPSwitAZMEVZOS75P-eQawz9U9BnN0ZiXpG6bMRwmlyPjDsLpIPF6kCwApV42KRIiTV4uK7sEKyBQOSkkMuLQp8GUUtnvr2NgWIHAVvQW4WDQT--qTmVEHxYhnKgu4XIax47H8kf9k2e1frTrlSJMEdkqQzpht_rkkTTx_OlXxc7Fhmey-RZKsl0l7u7GJVcm2Mm2uw">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Apparel · PRN-TEE-014</span><span class="fulfillment-tag">Printful Fulfilled</span></div>
+<div class="product-title">Heavyweight Organic Boxy Tee</div>
+<div class="product-desc">240 GSM algodón orgánico peinado boxy fit.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$42.00</span>
+<button class="btn btn-primary" onclick="addCart('Heavyweight Organic Boxy Tee', 42)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="product-card">
+<img alt="Atelier Heavyweight Hoodie 420 GSM" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA39qYr9tFA2C0ie51gzDkqJUsLyz3RvrycPlIDB6vcCNpsgTP0UyH8qdI-U4d4mrAoOWhqQfc5B1-P_sREKBz7ko9AJfWgLJE7guoI761DTYicAJQE7IqUC5ZDYui4TAVZgJz8FOn3CVVe8BoDE-Rqr-rOQcLFXhfA65X-X9LBJAMs3SaTw_aq-GwvXNBEJ7FmsYqVFPYmi2VOJ6bsiv7NDn8UtkYE91WVTZo-B9T8BGWSw7wRXOeCOA">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Apparel · PRN-HOD-028</span><span class="fulfillment-tag">Printful Fulfilled</span></div>
+<div class="product-title">Atelier Heavyweight Hoodie 420 GSM</div>
+<div class="product-desc">420 GSM French Terry sin cordones.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$88.00</span>
+<button class="btn btn-primary" onclick="addCart('Atelier Heavyweight Hoodie 420 GSM', 88)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="product-card">
+<img alt="Gallery Stretched Canvas" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXta2oMyNld7FWOtb2Bc_yLRDHcIlJgo1TJbCRUKh24xINC0Xwv3BTwa6KOBv9ny8vxNdrE-XYCgtb8pZiN_kog0HAGfYGEZIa7on30E1GQi1b-gVBEWe2PzNnnSsSa8tpgbS2fMBjIhOwxo6MygyV-h3QVUMPAfxUh5l-3pjP_t3KVEsqXWai_8uCjIObk1lDFErNL7jv0a-0lUBlcOTrWQuLdeCyVJJUQ1T6MZK7cPiA7TRUrBsqNA">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Canvas · PRN-CAN-120</span><span class="fulfillment-tag">Printful Fulfilled</span></div>
+<div class="product-title">Gallery Fine-Art Stretched Canvas</div>
+<div class="product-desc">Lienzo 380 GSM en bastidor de pino FSC.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$110.00</span>
+<button class="btn btn-primary" onclick="addCart('Gallery Fine-Art Stretched Canvas', 110)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="product-card">
+<img alt="Optical Acrylic Panel 5mm" class="product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK_ZubFntzytciRBEsbTfmZcLXI8BGsDv91gl1lWuqRGoZN3OGAkmURVOtM2eITRtzTOtqPmetdOgX0-LbForrkzAdRSK21KDRBibMXMFPX0aW3gZoeKE4DMfobmRnLX21Rdt3MPbmlWvUJyDS2noZsvi3GicgKoo-AQKtI2FrZ7rDS2j2OY7l9kpc1K7OOAWkFQqcUn-p6PfIy8CyRupjX8I5TNoSPnDPPsnHEpDn_n56Dc7IubbOnw">
+<div class="product-body">
+<div>
+<div class="product-cat"><span class="">Exhibition · ART-ACR-750</span><span class="fulfillment-tag" style="background:#e0f2fe; color:#0369a1;">Stock Atelier</span></div>
+<div class="product-title">Optical Acrylic Street Panel 5mm</div>
+<div class="product-desc">Impresión UV sobre metacrilato con pernos flotantes.</div>
+</div>
+<div class="product-footer">
+<span class="product-price">$145.00</span>
+<button class="btn btn-primary" onclick="addCart('Optical Acrylic Street Panel 5mm', 145)">Añadir a Bolsa</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== TAB 3: CONTACTO ==================== -->
+<section class="tab-pane" id="tab-contacto" style="display: none;">
+<div style="margin-bottom: 24px;">
+<span class="hero-badge">Atención Directa &amp; Drops a Medida</span>
+<h1 style="font-size: 28px; font-weight: 800;" class="">Contacto &amp; Soporte Lienzo Urbano</h1>
+<p style="color: var(--muted); font-size: 14px;" class="">Estamos listos para hacer realidad tu cápsula de ropa urbana o tu colección de arte.</p>
+</div>
+<div class="contact-grid">
+<div style="background: rgb(234, 241, 250); border: 1px solid rgb(203, 216, 236); border-radius: 16px; padding: 24px;">
+<h3 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;" class="">Envíanos tu Consulta</h3>
+<form onsubmit="event.preventDefault(); alert('Gracias por escribirnos. Un asesor de Lienzo Urbano te contactará de inmediato.');">
+<div class="form-group">
+<label class="form-label">Nombre Completo</label>
+<input class="form-input" placeholder="Tu nombre o el de tu marca" required="" type="text">
+</div>
+<div class="form-group">
+<label class="form-label">Correo Electrónico</label>
+<input class="form-input" placeholder="correo@ejemplo.com" required="" type="email">
+</div>
+<div class="form-group">
+<label class="form-label">Tipo de Proyecto</label>
+<select class="form-select">
+<option>Cápsula Streetwear Personalizada (Custom Made)</option>
+<option>Impresión de Arte de Galería (Canvas / Acrílico)</option>
+<option>Integración Dropshipping &amp; Tienda WooCommerce</option>
+<option>Pregunta General sobre Pedido</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label">Mensaje o Detalles del Drop</label>
+<textarea class="form-textarea" placeholder="Descríbenos tu idea, número de piezas, telas o fecha objetivo..." rows="4"></textarea>
+</div>
+<button class="btn btn-primary" style="width: 100%; padding: 12px;" type="submit">Enviar Mensaje</button>
+</form>
+</div>
+<div>
+<div style="background: linear-gradient(135deg, rgba(37,211,102,0.12), rgba(16,185,129,0.06)); border: 1px solid rgba(37,211,102,0.3); border-radius: 16px; padding: 24px; margin-bottom: 20px;">
+<h3 style="font-size: 18px; font-weight: 800; color: #166534; margin-bottom: 8px;" class="">Atención Inmediata por WhatsApp</h3>
+<p style="font-size: 13px; color: #374151; margin-bottom: 16px; line-height: 1.5;" class="">
+            Para cotizaciones exprés de drops, revisión técnica de archivos y muestras de tela, habla directamente con nuestro equipo de confección y serigrafía.
+          </p>
+<a class="btn btn-whatsapp" href="https://wa.me/525525433766?text=Hola%20Lienzo%20Urbano%2C%20quiero%20cotizar%20un%20proyecto" style="width: 100%; padding: 12px; font-size: 14px;" target="_blank">
+<span class="material-symbols-outlined">chat</span>
+<span class="">Escribir al +52 55 2543 3766</span>
+</a>
+</div>
+<div style="background: rgb(234, 241, 250); border: 1px solid rgb(203, 216, 236); border-radius: 16px; padding: 20px;">
+<h4 style="font-size: 14px; font-weight: 800; margin-bottom: 8px;" class="">Información de Operación</h4>
+<p style="font-size: 12px; color: var(--muted); margin-bottom: 4px;" class="">• Dominio Oficial: <strong>lienzourbano.shop</strong></p>
+<p style="font-size: 12px; color: var(--muted); margin-bottom: 4px;" class="">• Taller &amp; Estudio: Atelier Lienzo Urbano</p>
+<p style="font-size: 12px; color: var(--muted);" class="">• Producción &amp; Sincronización: Printful API Global + Envíos con FedEx / DHL</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- FLOATING WHATSAPP -->
+<footer style="background: linear-gradient(rgba(14, 25, 48, 0.98) 0%, rgb(10, 18, 36) 100%); color: rgb(148, 163, 184); border-top: 1px solid rgba(56, 189, 248, 0.28); margin-top: 60px; padding: 60px 24px 30px; font-size: 13px;"><div style="max-width: 1280px; margin: 0 auto;"><div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 48px;"><div><div class="brand" style="color: #fff; margin-bottom: 14px;"><span style="font-size: 20px; font-weight: 800; letter-spacing: 0.5px;" class="">LIENZO URBANO</span></div><p style="color: #78716c; font-size: 13px; line-height: 1.6; margin-bottom: 16px;" class="">Print-on-Demand de Alta Gama &amp; Confección Custom Made. Sincronización en tiempo real entre WooCommerce y Printful API con producción bajo demanda para marcas urbanas y coleccionistas.</p><div style="display: flex; flex-direction: column; gap: 8px;"><a href="https://lienzourbano.shop" style="color: #f59e0b; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;" class=""><span class="material-symbols-outlined" style="font-size: 16px;">lock</span> lienzourbano.shop (SSL 256-Bit)</a><a href="https://wa.me/525525433766" target="_blank" style="color: #25d366; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;" class=""><span class="material-symbols-outlined" style="font-size: 16px;">chat</span> WhatsApp: +52 55 2543 3766</a></div></div><div><h4 style="color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;" class="">Navegación</h4><ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;"><li class=""><a href="#" onclick="switchTab('tienda'); return false;" style="color: #a8a29e; text-decoration: none;" class="">Tienda &amp; Catálogo 4x3</a></li><li class=""><a href="#" onclick="switchTab('blog'); return false;" style="color: #a8a29e; text-decoration: none;" class="">Blog &amp; Guías SEO</a></li><li class=""><a href="#" onclick="switchTab('tienda'); setTimeout(() =&gt; document.getElementById('custom-matrix').scrollIntoView({behavior: 'smooth'}), 100); return false;" style="color: #a8a29e; text-decoration: none;" class="">Matriz Custom Made (12 Cajas)</a></li><li class=""><a href="#" onclick="switchTab('tienda'); setTimeout(() =&gt; document.querySelector('section:has(details)').scrollIntoView({behavior: 'smooth'}), 100); return false;" style="color: #a8a29e; text-decoration: none;" class="">Preguntas Frecuentes (Q&amp;A)</a></li><li class=""><a href="#" onclick="switchTab('contacto'); return false;" style="color: #a8a29e; text-decoration: none;" class="">Contacto Directo</a></li></ul></div><div><h4 style="color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;" class="">Producción &amp; Drops</h4><ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;"><li class=""><span style="color: #e4e4e7;" class="">Streetwear Heavyweight (240/420 GSM)</span></li><li class=""><span style="color: #e4e4e7;" class="">Impresión Fine-Art Giclée</span></li><li class=""><span style="color: #e4e4e7;" class="">Acrílico UV &amp; Placas Metálicas</span></li><li class=""><span style="color: #e4e4e7;" class="">Serigrafía Puff &amp; Bordado 3D</span></li><li class=""><span style="color: #e4e4e7;" class="">Muestras Físicas Sin Mínimos (No MOQ)</span></li></ul></div><div><h4 style="color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;" class="">Integraciones &amp; Envíos</h4><ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;"><li class=""><span style="color: #e4e4e7;" class="">WordPress REST API v6.x</span></li><li class=""><span style="color: #e4e4e7;" class="">WooCommerce Sync v3</span></li><li class=""><span style="color: #e4e4e7;" class="">Printful Dropshipping Direct Webhook</span></li><li class=""><span style="color: #e4e4e7;" class="">Rastreo de Envíos en Vivo (FedEx / DHL)</span></li></ul><div style="display: flex; gap: 8px; flex-wrap: wrap;"><span style="background: #221f1d; border: 1px solid #332e2a; color: #a8a29e; padding: 4px 8px; border-radius: 4px; font-size: 11px;" class="">SSL 256-Bit</span><span style="background: #221f1d; border: 1px solid #332e2a; color: #a8a29e; padding: 4px 8px; border-radius: 4px; font-size: 11px;" class="">WooCommerce</span><span style="background: #221f1d; border: 1px solid #332e2a; color: #a8a29e; padding: 4px 8px; border-radius: 4px; font-size: 11px;" class="">Printful Partner</span></div></div></div><div style="border-top: 1px solid #292524; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 12px;"><div class="">© 2025 Lienzo Urbano (<a href="https://lienzourbano.shop" style="color: #f59e0b; text-decoration: none;" class="">lienzourbano.shop</a>). Todos los derechos reservados. All rights reserved.</div><div style="display: flex; gap: 16px; flex-wrap: wrap;"><a href="#" style="color: #78716c; text-decoration: none;" class="">Términos y Condiciones</a><span class="">·</span><a href="#" style="color: #78716c; text-decoration: none;" class="">Política de Privacidad</a><span class="">·</span><a href="#" style="color: #78716c; text-decoration: none;" class="">Envíos y Devoluciones</a><span class="">·</span><a href="#" style="color: #78716c; text-decoration: none;" class="">Aviso Legal</a></div></div></div></footer><a class="floating-wa" href="https://wa.me/525525433766?text=Hola%20Lienzo%20Urbano%2C%20tengo%20una%20pregunta%20sobre%20sus%20productos" target="_blank" title="Chat en WhatsApp con Lienzo Urbano">
+<span class="floating-wa-label">¿Tienes una idea o diseño? Escríbenos</span>
+<div class="floating-wa-btn">
+<span class="material-symbols-outlined" style="font-size: 28px;">chat</span>
+</div>
+</a>
+<!-- JAVASCRIPT: TABS, SLIDER, CART, LANG -->
+<script>
+  let cartItems = 0;
+  let cartTotal = 0;
+
+  function addCart(title, price) {
+    cartItems++;
+    cartTotal += price;
+    document.getElementById('cart-counter').innerText = cartItems;
+    alert('Añadido a la bolsa: ' + title + ' ($' + price + '). Total: $' + cartTotal.toFixed(2));
+  }
+
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-pane').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+    
+    document.getElementById('tab-' + tabId).style.display = 'block';
+    document.getElementById('nav-' + tabId).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // SLIDER LOGIC
+  let currentSlide = 0;
+  const track = document.getElementById('slider-track');
+  const dots = document.querySelectorAll('.slider-dot');
+
+  function updateSlider() {
+    const slideWidth = 33.333; // percent approx
+    track.style.transform = `translateX(-${currentSlide * 34}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+
+  function slidePrev() {
+    currentSlide = (currentSlide > 0) ? currentSlide - 1 : 3;
+    updateSlider();
+  }
+
+  function slideNext() {
+    currentSlide = (currentSlide < 3) ? currentSlide + 1 : 0;
+    updateSlider();
+  }
+
+  function goSlide(index) {
+    currentSlide = index;
+    updateSlider();
+  }
+
+  // CATEGORY FILTER
+  function filterCat(cat, chip) {
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    
+    const cards = document.querySelectorAll('#woo-grid .product-card');
+    cards.forEach(card => {
+      if (cat === 'todos' || card.dataset.cat === cat) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // BILINGUAL TOGGLE
+  let currentLang = 'es';
+  function setLang(lang) {
+    currentLang = lang;
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.innerText = (lang === 'es') ? el.getAttribute('data-es') : el.getAttribute('data-en');
+    });
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

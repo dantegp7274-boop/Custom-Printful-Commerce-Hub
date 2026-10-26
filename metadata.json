@@ -1,0 +1,8 @@
+{
+  "name": "Remix Lienzo Urbano · Atelier \u0026 Autonomous POD Store",
+  "description": "Lienzo Urbano official store with WooCommerce 4x3 catalog, 12-box custom made drops matrix, Printful sync, bilingual blog, and work recording.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
